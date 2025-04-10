@@ -10,6 +10,7 @@ body {
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
+    min-width: 320px; /* Ancho mínimo para móviles pequeños */
 }
 
 /* Advertencia de edad */
@@ -19,41 +20,39 @@ body {
     text-align: center;
     padding: 0.6rem;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reducido para móvil */
     letter-spacing: 0.5px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Header principal optimizado */
+/* Header optimizado para móvil */
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+    flex-direction: column; /* Cambio a columna en móvil */
+    padding: 1rem;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 40px;
     z-index: 999;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-/* Branding más compacto */
+/* Branding centrado en móvil */
 .branding {
     display: flex;
+    flex-direction: column; /* Cambio a columna */
     align-items: center;
-    gap: 1rem;
-    min-width: 200px;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .logo {
-    width: 80px;
+    width: 60px; /* Reducido para móvil */
     height: auto;
     transition: transform 0.3s ease;
-
 }
 
 .logo:hover {
@@ -61,17 +60,15 @@ body {
 }
 
 .site-title {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reducido para móvil */
     font-weight: 700;
     color: #1e824c;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
     white-space: nowrap;
-    /* Borde suave alrededor de las letras */   
-    -webkit-text-stroke: 1px #000; /* Grosor y color del borde */
-    paint-order: stroke fill; /* Asegura que el borde se dibuje detrás del relleno */
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-align: center; /* Centrado en móvil */
 }
 
 .site-title span {
@@ -82,9 +79,9 @@ body {
 .site-title span::after {
     content: '420';
     position: absolute;
-    right: -26px;
-    top: -23px;
-    font-size: 0.9rem;
+    right: -20px; /* Ajustado para móvil */
+    top: -18px; /* Ajustado para móvil */
+    font-size: 0.7rem; /* Reducido para móvil */
     color: #1e824c;
     font-weight: 800;
     transform: rotate(15deg);
@@ -96,32 +93,31 @@ body {
     50% { transform: translateY(-3px) rotate(20deg); }
 }
 
-/* Navegación optimizada sin iconos */
+/* Navegación optimizada para móvil */
 .main-nav {
-    flex-grow: 1;
-    min-width: 0; /* Permite que se reduzca */
+    width: 100%;
+    order: 3; /* Mover la navegación al final en móvil */
 }
 
 .nav-list {
     display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    list-style: none;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem; /* Reducido para móvil */
+    list-style: none;
 }
 
 .nav-link {
     text-decoration: none;
     color: #2c783c;
     font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem; /* Reducido para móvil */
+    padding: 0.4rem 0.8rem; /* Ajustado para móvil */
     border-radius: 6px;
     transition: all 0.3s ease;
     white-space: nowrap;
     display: block;
-    -webkit-text-stroke: 20% #000; /* Grosor y color del borde */
-    paint-order: stroke fill; /* Asegura que el borde se dibuje detrás del relleno */
+    -webkit-text-stroke: 0.5px #000; /* Reducido para móvil */
 }
 
 .nav-link:hover {
@@ -131,20 +127,19 @@ body {
     box-shadow: 0 3px 6px rgba(39, 174, 96, 0.2);
 }
 
-/* Controles del header más compactos */
+/* Controles del header para móvil */
 .header-controls {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
     gap: 1rem;
-    min-width: 200px;
-    justify-content: flex-end;
+    order: 2; /* Posición intermedia */
 }
 
 .search-form {
     position: relative;
-    display: flex;
-    align-items: center;
-    min-width: 150px;
+    width: 100%;
+    max-width: 200px;
 }
 
 .search-input {
@@ -153,7 +148,6 @@ body {
     border: 1px solid #ddd;
     border-radius: 50px;
     width: 100%;
-    max-width: 200px;
     font-size: 0.9rem;
 }
 
@@ -171,13 +165,11 @@ body {
 }
 
 .icon-button {
-    margin-top: 10px;
-    width: 46px;
+    width: 36px; /* Reducido para móvil */
     height: 36px;
     padding: 0;
-    z-index: 3;
 }
-/* Añade esto al final de tu CSS sin modificar nada más */
+
 .cart-count {
     position: absolute;
     top: -5px;
@@ -185,45 +177,39 @@ body {
     background-color: #27ae60;
     color: white;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
+    width: 16px; /* Reducido para móvil */
+    height: 16px; /* Reducido para móvil */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
+    font-size: 0.6rem; /* Reducido para móvil */
     font-weight: bold;
 }
 
-.cart-icon {
-    position: relative;
-}
-
-.icon-button {
-    position: relative; /* Asegura que el contador se posicione relativo al botón */
-}
+/* Footer para móvil */
 footer {
     background-color: #222;
     color: #fff;
-    padding: 2rem 1rem;
-    font-family: 'Rubik', sans-serif;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    padding: 1.5rem 1rem; /* Reducido para móvil */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Reducido para móvil */
     border-top: 3px solid #1e824c;
 }
 
 footer p {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reducido para móvil */
     color: #aaa;
     margin: 0;
+    order: 3;
 }
 
 footer nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    flex-direction: column; /* Cambio a columna */
+    align-items: center;
+    gap: 1rem;
 }
 
 footer nav a {
@@ -234,38 +220,26 @@ footer nav a {
     padding: 0.3rem 0;
     position: relative;
     white-space: nowrap;
+    text-align: center;
 }
 
-footer nav a:hover {
-    color: #27ae60;
+/* Primer nav del footer */
+footer nav:first-of-type {
+    order: 1;
 }
 
-footer nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #27ae60;
-    transition: width 0.3s ease;
-}
-
-footer nav a:hover::after {
-    width: 100%;
-}
-
-/* Estilo especial para el primer nav */
 footer nav:first-of-type a {
     font-weight: 700;
     color: #27ae60;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 1rem;
 }
 
-/* Estilo para redes sociales */
+/* Nav de redes sociales */
 footer nav:nth-of-type(2) {
-    margin: 1rem 0;
+    order: 2;
+    margin: 0.5rem 0;
 }
 
 footer nav:nth-of-type(2) a {
@@ -274,35 +248,61 @@ footer nav:nth-of-type(2) a {
     gap: 0.5rem;
 }
 
-/* Iconos para redes sociales (puedes usar Font Awesome o SVG) */
-footer nav:nth-of-type(2) a::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
+/* Nav de políticas */
+footer nav:nth-of-type(3) {
+    order: 4;
 }
 
-footer nav:nth-of-type(2) a[href="TikTok"]::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>');
-}
-
-footer nav:nth-of-type(2) a[href="Instagram"]::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>');
-}
-
-/* Estilos responsivos */
-@media (min-width: 768px) {
-    footer {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        padding: 2rem 5%;
+/* Media Query para tablets (opcional) */
+@media (min-width: 600px) {
+    .header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     
-    footer p {
-        grid-column: 1 / -1;
+    .branding {
+        flex-direction: row;
+        width: auto;
+    }
+    
+    .main-nav {
+        order: 2;
+        width: 100%;
+    }
+    
+    .header-controls {
         order: 3;
+        width: auto;
+        justify-content: flex-end;
+    }
+    
+    footer nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Media Query para desktop (opcional) */
+@media (min-width: 900px) {
+    .header {
+        flex-wrap: nowrap;
+    }
+    
+    .main-nav {
+        order: initial;
+        width: auto;
+    }
+    
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    footer nav {
+        flex-direction: row;
     }
     
     footer nav:first-of-type {
@@ -311,67 +311,5 @@ footer nav:nth-of-type(2) a[href="Instagram"]::before {
     
     footer nav:nth-of-type(3) {
         justify-content: flex-end;
-    }
-}
-
-/* Responsive mejorado */
-@media (max-width: 1024px) {
-    .header {
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .site-title {
-        font-size: 1.5rem;
-    }
-    
-    .site-title span::after {
-        right: -25px;
-        font-size: 0.8rem;
-    }
-    
-    .nav-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .branding {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .main-nav {
-        width: 100%;
-    }
-    
-    .nav-list {
-        justify-content: center;
-    }
-    
-    .header-controls {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-list {
-        gap: 0.5rem;
-    }
-    
-    .nav-link {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-    }
-    
-    .search-input {
-        max-width: 150px;
     }
 }
