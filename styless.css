@@ -83,7 +83,32 @@ body {
 .logo:hover {
     transform: scale(1.05) rotate(-5deg);
 }
+/* Modo Oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
 
+body.dark-mode .header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .main-nav .nav-link {
+    color: #fff;
+}
+
+body.dark-mode .hero-banner {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+
+body.dark-mode .age-warning {
+    background-color: #000;
+    color: #ff6b6b;
+}
+
+/* Agrega más estilos oscuros según necesites */
 .site-title {
     font-size: 2rem;
     font-weight: 700;
@@ -217,6 +242,68 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+/* Hero Banner Styles */
+.hero-banner {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzGwUm0-QdybQ0APDcNV4F6Zc2VSYLsjgBQ&s') 
+        center/cover no-repeat;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* Footer Styles */
 footer {
@@ -387,6 +474,30 @@ footer a:hover {
         margin: 0.5rem;
     }
     
+/* Responsive adjustments */
+@media only screen and (max-width: 767px) {
+    .hero-banner {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+    }
+    
+    .hero-content h2 {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
     /* Footer */
     footer {
         padding: 1.5rem 1rem;
