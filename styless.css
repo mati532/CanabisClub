@@ -96,7 +96,7 @@ body {
     position: absolute;
     width: 45px;
     height: 45px;
-    background-image: url("cogollo.png");
+    background-image: url("images/cogollo.png");
     background-size: cover;
     background-repeat: no-repeat;
     animation: falling linear forwards;
@@ -489,18 +489,3 @@ body {
     }
 }
 
-/* HTML necesario para el menú hamburguesa (debes añadirlo) */
-/*
-<button class="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-*/
-
-/* JavaScript necesario para el menú hamburguesa (debes añadirlo) */
-/*
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('body').classList.toggle('menu-open');
-});
-*/  
