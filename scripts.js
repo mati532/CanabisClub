@@ -1,21 +1,19 @@
-// Selecciona el logo
-const logo = document.querySelector('.logo');
+const container = document.querySelector('.falling-buds-container');
 
-// Alternar modo oscuro al hacer clic en el logo
-logo.addEventListener('click', function(e) {
-    e.preventDefault(); // Evita que el enlace redirija
-    document.body.classList.toggle('dark-mode');
-    
-    // Opcional: Guardar preferencia en localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        localStorage.setItem('darkMode', 'disabled');
-    }
-});
+function createBud() {
+    const bud = document.createElement('div');
+    bud.classList.add('bud');
+    bud.style.left = Math.random() * 100 + '%';
 
-// Opcional: Cargar el modo guardado al iniciar
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
+    const duration = Math.random() * 4 + 6; // entre 6 y 10 segundos
+    bud.style.animationDuration = duration + 's';
+
+    container.appendChild(bud);
+
+    setTimeout(() => {
+        bud.remove();
+    }, duration * 1000); // eliminar después del tiempo real de caída
 }
 
+// Crear un nuevo bud cada 200ms (más buds)
+setInterval(createBud, 200);
