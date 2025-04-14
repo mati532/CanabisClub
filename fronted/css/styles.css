@@ -49,13 +49,13 @@ body {
     radial-gradient(ellipse at center, rgba(20,20,20,0.9) 0%, var(--deep-space) 100%);
     color: hsl(0, 0%, 100%);
     text-align: center;
-    padding: 0.6rem;
+    padding: 0.5rem;
     font-weight: 100;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     letter-spacing: 3px;
     text-transform: uppercase;
     position: sticky;
-    top: 0;
+    margin-top: -30px;
     z-index: 2000;
     box-shadow: 0 0 15px rgba(0,0,0,0.8), inset 0 0 20px rgba(74, 255, 74, 0.1);
     font-family: 'Orbitron', sans-serif;
@@ -69,22 +69,28 @@ body {
 
 .age-warning::before,
 .age-warning::after {
-    content: "⚠";
+    /* Estilos compartidos */
+    content: "\f071"; /* Icono de Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     position: absolute;
     top: 50%;
     font-size: 1.2em;
     opacity: 0.8;
     animation: blink 0.3s steps(2, start) infinite alternate, float 3s ease-in-out infinite alternate;
     transform: translateY(-50%);
+    color: #ffffff;
 }
 
+/* Posición del icono izquierdo */
 .age-warning::before {
-    left: 1.5rem;
+    left: 2.5rem;
     animation-direction: alternate, alternate-reverse;
 }
 
+/* Posición del icono derecho */
 .age-warning::after {
-    right: 1.5rem;
+    right: 2.5rem;
 }
 
 /* Animaciones */
@@ -129,7 +135,7 @@ body {
     position: absolute;
     width: 45px;
     height: 45px;
-    background-image: url("../../images/cogollo.png");
+    background-image: url("../../images/purpura.png");
     background-size: cover;
     background-repeat: no-repeat;
     animation: falling linear forwards;
@@ -557,7 +563,15 @@ body.dark-mode {
 }
 
 .dark-mode .bud {
-    filter: hue-rotate(90deg) brightness(1.2);
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-image: url("../../images/cogollox.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: falling linear forwards;
+    opacity: 0.9;
+    transition: filter 0.3s ease;
 }
 
 .dark-mode-toggle.active svg {
@@ -584,6 +598,97 @@ body.dark-mode {
 
 .dark-mode .dark-logo:hover {
     transform: scale(1.05) rotate(-5deg);
+}
+.dark-mode .age-warning {
+    --neon-green: #27ae60;
+    --deep-space: #0a1f12;
+    --pulse-speed: 1.5s;
+
+    background: 
+        radial-gradient(ellipse at center, rgba(10, 20, 15, 0.95) 0%, var(--deep-space) 100%);
+    color: hsl(0, 0%, 90%);
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 100;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: sticky;
+    margin-top: -30px;
+    top: 0;
+    z-index: 2000;
+    box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.8), 
+        inset 0 0 20px rgba(39, 174, 96, 0.15);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 
+        0 0 5px var(--neon-green), 
+        0 0 10px rgba(39, 174, 96, 0.7), 
+        0 0 20px rgba(39, 174, 96, 0.3);
+    animation: 
+        neon-pulse var(--pulse-speed) infinite alternate, 
+        scanlines 9s linear infinite;
+    pointer-events: none;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    -webkit-text-stroke: 0.3px #000;
+    border-bottom: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+.dark-mode .age-warning::before,
+.dark-mode .age-warning::after {
+    content: "\f071";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    font-size: 1.2em;
+    opacity: 0.8;
+    animation: 
+        blink 0.3s steps(2, start) infinite alternate, 
+        float 3s ease-in-out infinite alternate;
+    transform: translateY(-50%);
+    color: #27ae60;
+    text-shadow: 0 0 8px rgba(39, 174, 96, 0.7);
+}
+
+.dark-mode .age-warning::before {
+    left: 2.5rem;
+    animation-direction: alternate, alternate-reverse;
+}
+
+.dark-mode .age-warning::after {
+    right: 2.5rem;
+}
+
+/* Animaciones específicas para dark mode */
+@keyframes neon-pulse {
+    from {
+        box-shadow: 
+            0 0 15px rgba(0, 0, 0, 0.8), 
+            inset 0 0 20px rgba(39, 174, 96, 0.1);
+        text-shadow: 
+            0 0 5px var(--neon-green), 
+            0 0 10px rgba(39, 174, 96, 0.7), 
+            0 0 20px rgba(39, 174, 96, 0.3);
+    }
+    to {
+        box-shadow: 
+            0 0 20px rgba(0, 0, 0, 0.9), 
+            inset 0 0 30px rgba(39, 174, 96, 0.25);
+        text-shadow: 
+            0 0 8px var(--neon-green), 
+            0 0 15px rgba(39, 174, 96, 0.9), 
+            0 0 30px rgba(39, 174, 96, 0.5);
+    }
+}
+
+/* Efecto de scanlines para dark mode */
+.dark-mode .age-warning {
+    background-image: 
+        linear-gradient(rgba(39, 174, 96, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(39, 174, 96, 0.07) 1px, transparent 1px);
+    background-size: 3px 3px;
 }
 
 /* Responsive para móviles */
@@ -715,22 +820,3 @@ body.dark-mode {
     }
 }
 
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .site-title {
-        font-size: 1.3rem;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .featured-products {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card {
-        max-width: 100%;
-    }
-}
